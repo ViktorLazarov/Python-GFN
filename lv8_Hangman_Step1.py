@@ -4,74 +4,68 @@
 #  |_||_\__,_|_||_\__, |_|_|_\__,_|_||_|
 #                 |___/                 
 import random
-with open('wordlist 1.txt', 'r') as file:
-    word_list2 = file.read()
-    
-import art
-stages = art.stages
-
-# stages = ['''
-#   +---+
-#   |   |
-#   O   |
-#  /|\  |
-#  / \  |
-#       |
-# =========
-# ''', '''
-#   +---+
-#   |   |
-#   O   |
-#  /|\  |
-#  /    |
-#       |
-# =========
-# ''', '''
-#   +---+
-#   |   |
-#   O   |
-#  /|\  |
-#       |
-#       |
-# =========
-# ''', '''
-#   +---+
-#   |   |
-#   O   |
-#  /|   |
-#       |
-#       |
-# =========''', '''
-#   +---+
-#   |   |
-#   O   |
-#   |   |
-#       |
-#       |
-# =========
-# ''', '''
-#   +---+
-#   |   |
-#   O   |
-#       |
-#       |
-#       |
-# =========
-# ''', '''
-#   +---+
-#   |   |
-#       |
-#       |
-#       |
-#       |
-# =========
-# ''']
+stages = ['''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+''']
 # Step 1
 
 word_list = ["Dragonball", "JavaScript", "Python", "Programmieren"]
 
 # TODO-1 - Randomly choose a word from the word_list and assign it to a variable called chosen_word.
-chosen_word = word_list2[random.randint(0,len(word_list2)-1)]
+chosen_word = word_list[random.randint(0,len(word_list)-1)]
 chosen_word_list = list(chosen_word.lower())
 print(chosen_word_list)
 # TODO-2 - Ask the user to guess a letter and assign their answer to a variable called guess. Make guess lowercase.

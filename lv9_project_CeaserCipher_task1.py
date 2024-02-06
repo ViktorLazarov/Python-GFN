@@ -1,21 +1,10 @@
-import json
-
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
-#import content from json file
-with open("input.json", "r") as file:
-    input_from_file = json.load(file)
+direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+text = input("Type your message:\n").lower()
+shift = int(input("Type the shift number:\n"))
 
-direction = input_from_file['direction']
-text = input_from_file['text']
-shift = input_from_file['shift']
-
-#create dictionary to be inserted into the output file
-out_dict = {}
-
-out_dict['text'] = text
-out_dict['direction'] = direction
-out_dict['shift'] = shift
+#TODO-1: Create a function called 'encrypt' that takes the 'text' and 'shift' as inputs.
 
 # encrypt the given message
 def encrypt(input_text, shift_amount):
@@ -34,27 +23,40 @@ def encrypt(input_text, shift_amount):
 #decrypt the given message
 def decrypt(input_text, shift_amount):
     encrypted_text = []
-    my_dict = {}
     for letter in input_text:
         if letter == ' ':
             encrypted_text.append(' ')
         else:
             possition = alphabet.index(letter) - shift_amount
             if possition < 0:
-                possition += 26
+                possition += 25
             encrypted_text.append(alphabet[possition])
     
     return ''.join(encrypted_text)
-    
-#decide to encrypt or decrypt message
+
+    #TODO-2: Inside the 'encrypt' function, shift each letter of the 'text' forwards in the alphabet by the shift amount and print the encrypted text.  
+    #e.g. 
+    #plain_text = "hello"
+    #shift = 5
+    #cipher_text = "mjqqt"
+    #print output: "The encoded text is mjqqt"
+
+    ##HINT: How do you get the index of an item in a list:
+    #https://stackoverflow.com/questions/176918/finding-the-index-of-an-item-in-a-list
+
+    ##🐛Bug alert: What happens if you try to encode the word 'civilization'?🐛
+
+#TODO-3: Call the encrypt function and pass in the user inputs. You should be able to test the code and encrypt a message. 
+
+#print out the encrypted or decrypted message
+    #if direction is 'encode'
+        #call encrypt()
+    #if direction is 'decode'
+        #call decrypt()
 match direction:
     case 'encode':
-        out_dict['new_text'] = encrypt(text, shift)    
+        print(encrypt(text, shift))
     case 'decode':
-        out_dict['new_text'] = decrypt(text, shift)
+        print(decrypt(text, shift))       
     case _:
-        print('Wrong command!')
-
-#write the output dictionary into the output file        
-with open('output.json', 'w') as output:
-    json.dump(out_dict, output, indent=4)
+        print('Wrong command!')           
