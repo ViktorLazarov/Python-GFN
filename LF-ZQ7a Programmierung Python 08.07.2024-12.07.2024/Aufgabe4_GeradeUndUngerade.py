@@ -1,5 +1,7 @@
 def is_even(zahl):
-    print("ungerade" if zahl % 2 else "gerade")
-    
+    return True if zahl % 2 else False
 
-is_even(20)
+numbersList = [4,7,12,56,33,59]
+
+for i in numbersList:
+    print("ungerade" if is_even(i) else "gerade")
