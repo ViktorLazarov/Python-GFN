@@ -30,17 +30,17 @@ userChoice = input()
 #based on user choice call the corresponding function
 
 match userChoice:
-    case "1": print(f"The temperature you entered was in Celsius, which is {str(round(calc_celsius_to_kelvin(take_user_input()),2))} degrees in Kelvin")
+    case "1": print(f"The temperature you entered was in Celsius, which is {round(calc_celsius_to_kelvin(take_user_input()),2)} degrees in Kelvin")
     
-    case "2": print(f"The temperature you entered was in Celsius, which is {str(round(calc_celsius_to_fahrenheit(take_user_input()),2))} degrees in Fahrenheit")
+    case "2": print(f"The temperature you entered was in Celsius, which is {round(calc_celsius_to_fahrenheit(take_user_input()),2)} degrees in Fahrenheit")
     
-    case "3": print(f"The temperature you entered was in Kelvin, which is {str(round(calc_kelvin_to_celsius(take_user_input()),2))} degrees in Celsius")
+    case "3": print(f"The temperature you entered was in Kelvin, which is {round(calc_kelvin_to_celsius(take_user_input()),2)} degrees in Celsius")
     
-    case "4": print(f"The temperature you entered was in Kelvin, which is {str(round(calc_kelvin_to_fahrenheit(take_user_input()),2))} degrees in Fahrenheit")
+    case "4": print(f"The temperature you entered was in Kelvin, which is {round(calc_kelvin_to_fahrenheit(take_user_input()),2)} degrees in Fahrenheit")
     
-    case "5": print(f"The temperature you entered was in Fahrenheit , which is {str(round(calc_fahrenheit_to_celsius(take_user_input()),2))} degrees in Celsius")
+    case "5": print(f"The temperature you entered was in Fahrenheit , which is {round(calc_fahrenheit_to_celsius(take_user_input()),2)} degrees in Celsius")
     
-    case "6": print(f"The temperature you entered was in Fahrenheit , which is {str(round(calc_fahrenheit_to_kelvin(take_user_input()),2))} degrees in Kelvin")
+    case "6": print(f"The temperature you entered was in Fahrenheit , which is {round(calc_fahrenheit_to_kelvin(take_user_input()),2)} degrees in Kelvin")
 
 
 
